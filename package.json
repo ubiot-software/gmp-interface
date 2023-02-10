@@ -1,0 +1,26 @@
+{
+  "name": "gmp-interface",
+  "version": "1.0.0",
+  "description": "GroundWater MarketPlace official interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejandroch1202/gmp-interface.git"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "nodejs",
+    "web3",
+    "eth"
+  ],
+  "author": "Alejandro Chavez <alejandrochavez1202@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alejandroch1202/gmp-interface/issues"
+  },
+  "homepage": "https://github.com/alejandroch1202/gmp-interface#readme"
+}
