@@ -1,9 +1,12 @@
-import React from "react";
-import logo from "@assets/logo.png";
+import React, { useContext } from "react";
 import TransactionDetail from "@containers/TransactionDetail";
+import AppContext from "@context/AppContext";
+import logo from "@assets/logo.png";
 import "@styles/Header.scss";
 
 const Header = () => {
+  const { state } = useContext(AppContext);
+
   return (
     <nav>
       <div className="navbar-left">
@@ -37,7 +40,7 @@ const Header = () => {
       <div className="navbar-right">
         <p className="navbar-wallet">0x577A...46e308</p>
       </div>
-      {<TransactionDetail />}
+      {!state && <TransactionDetail />}
     </nav>
   );
 };

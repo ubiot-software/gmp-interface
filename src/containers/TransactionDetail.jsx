@@ -5,7 +5,7 @@ import "@styles/TransactionDetail.scss";
 
 const TransactionDetail = () => {
   return (
-    <aside className="transaction-detail inactive">
+    <aside className="transaction-detail ">
       <div className="transaction-detail-close">
         <img src={closeImg} alt="close" />
       </div>
