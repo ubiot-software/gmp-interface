@@ -1,0 +1,37 @@
+.market-card {
+  width: 250px;
+  height: 160px;
+  border-radius: 10px;
+  border: 1px solid var(--secondary-color);
+  gap: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.market-info {
+  width: 100%;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.market-info p {
+  font-size: var(--lg);
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+
+.market-info .market-date {
+  font-size: var(--md);
+}
+
+.market-info figure {
+  margin: 0;
+  cursor: pointer;
+}
+
+.market-info figure img {
+  width: 30px;
+}

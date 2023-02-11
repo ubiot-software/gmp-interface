@@ -1,0 +1,22 @@
+.transaction-detail {
+  border-left: 1px solid var(--secondary-color);
+  padding: 10px 20px;
+  width: 350px;
+  background-color: var(--white);
+  position: absolute;
+  top: 75px;
+  bottom: 0;
+  right: 0;
+  box-sizing: border-box;
+}
+
+.transaction-detail-close {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.transaction-detail-close img {
+  width: 30px;
+}
