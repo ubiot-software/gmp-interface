@@ -3,9 +3,16 @@ import infoImage from "@assets/info.png";
 import "@styles/Home.scss";
 
 const Home = () => {
-  const toMarketplace = () => {
-    window.location.href = "/marketplace";
+  const redirectTo = (url) => {
+    window.location.href = url;
   };
+  const toMarketplace = () => {
+    redirectTo("/marketplace");
+  };
+  const toDashboard = () => {
+    redirectTo("/dashboard");
+  };
+
   return (
     <section className="container">
       <div className="content">
@@ -27,7 +34,9 @@ const Home = () => {
             <button className="primary-button" onClick={toMarketplace}>
               Marketplace
             </button>
-            <button className="secondary-button">Dashboard</button>
+            <button className="secondary-button" onClick={toDashboard}>
+              Dashboard
+            </button>
           </div>
         </div>
 

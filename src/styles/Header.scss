@@ -51,11 +51,29 @@ nav {
   align-items: center;
 }
 .navbar-wallet {
-  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
   background-color: var(--white);
   border-radius: 5px;
   padding: 5px 10px;
-  font-size: var(--lg);
   margin-right: 12px;
   cursor: pointer;
+}
+
+.navbar-wallet p {
+  font-size: var(--lg);
+  color: var(--secondary-color);
+  margin: 0 10px 0 0;
+}
+
+.add-account {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.close-account {
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
 }
