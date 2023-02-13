@@ -1,11 +1,17 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import TransactionDetail from "@containers/TransactionDetail";
 import AppContext from "@context/AppContext";
+import Menu from "@components/Menu";
+import Sell from "@containers/Sell";
 import logo from "@assets/logo.png";
 import "@styles/Header.scss";
 
 const Header = () => {
-  const { state } = useContext(AppContext);
+  const { transactionInfo, sellInfo } = useContext(AppContext);
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const handleToggleMenu = () => {
+    setToggleMenu(!toggleMenu);
+  };
 
   return (
     <nav>
@@ -38,9 +44,13 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-right">
-        <p className="navbar-wallet">0x577A...46e308</p>
+        <p className="navbar-wallet prevent-select" onClick={handleToggleMenu}>
+          0x577A...46e308
+        </p>
       </div>
-      {!state && <TransactionDetail />}
+      {toggleMenu && <Menu />}
+      {sellInfo && <Sell />}
+      {transactionInfo && <TransactionDetail />}
     </nav>
   );
 };

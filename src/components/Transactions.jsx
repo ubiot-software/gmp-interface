@@ -5,7 +5,6 @@ import addTransactionImg from "@assets/add.png";
 
 const Transactions = () => {
   const { toggleTransactionInfo } = useContext(AppContext);
-
   const handleClick = () => {
     toggleTransactionInfo();
   };
