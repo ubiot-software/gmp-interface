@@ -3,6 +3,9 @@ import infoImage from "@assets/info.png";
 import "@styles/Home.scss";
 
 const Home = () => {
+  const toMarketplace = () => {
+    window.location.href = "/marketplace";
+  };
   return (
     <section className="container">
       <div className="content">
@@ -21,7 +24,9 @@ const Home = () => {
             providers.
           </p>
           <div className="buttons">
-            <button className="primary-button">Marketplace</button>
+            <button className="primary-button" onClick={toMarketplace}>
+              Marketplace
+            </button>
             <button className="secondary-button">Dashboard</button>
           </div>
         </div>
