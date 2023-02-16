@@ -1,5 +1,5 @@
 import { useWeb3React } from "@web3-react/core";
-import React, { useState, useCallback, useEffect } from "react";
+import React from "react";
 import Sale from "@components/Sale";
 import Spinner from "@components/Spinner";
 import { useData } from "@hooks/useData";
@@ -8,6 +8,8 @@ import "@styles/Sales.scss";
 const Sales = () => {
   const { active } = useWeb3React();
   const { sales, loading } = useData();
+
+  if (!active) return "Please login...";
 
   return (
     <>

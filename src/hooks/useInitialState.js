@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 const useInitialState = () => {
-  const [transactionInfo, setToggleTransactionInfo] = useState(false);
-  const toggleTransactionInfo = () => {
-    setToggleTransactionInfo(!transactionInfo);
+  const [saleInfo, setToggleSaleInfo] = useState(false);
+  const toggleSaleInfo = () => {
+    setToggleSaleInfo(!saleInfo);
   };
 
   const [sellInfo, setToggleSellInfo] = useState(false);
@@ -12,8 +12,8 @@ const useInitialState = () => {
   };
 
   return {
-    transactionInfo,
-    toggleTransactionInfo,
+    saleInfo,
+    toggleSaleInfo,
     sellInfo,
     toggleSellInfo,
   };

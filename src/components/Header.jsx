@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect, useCallback } from "react";
-import TransactionDetail from "@containers/TransactionDetail";
+import SaleDetail from "@containers/SaleDetail";
 import AppContext from "@context/AppContext";
 import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core";
 import { connector } from "@config/web3";
@@ -10,7 +10,7 @@ import addImg from "@assets/add.png";
 import "@styles/Header.scss";
 
 const Header = () => {
-  const { transactionInfo, sellInfo } = useContext(AppContext);
+  const { saleInfo, sellInfo } = useContext(AppContext);
   const [toggleMenu, setToggleMenu] = useState(false);
   const handleToggleMenu = () => {
     if (active) setToggleMenu(!toggleMenu);
@@ -109,7 +109,7 @@ const Header = () => {
       </div>
       {toggleMenu && <Menu />}
       {sellInfo && <Sell />}
-      {transactionInfo && <TransactionDetail />}
+      {saleInfo && <SaleDetail />}
     </nav>
   );
 };
