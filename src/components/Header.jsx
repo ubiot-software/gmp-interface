@@ -13,7 +13,7 @@ const Header = () => {
   const { transactionInfo, sellInfo } = useContext(AppContext);
   const [toggleMenu, setToggleMenu] = useState(false);
   const handleToggleMenu = () => {
-    setToggleMenu(!toggleMenu);
+    if (active) setToggleMenu(!toggleMenu);
   };
 
   // Wallet display config

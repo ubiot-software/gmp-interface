@@ -1,60 +1,57 @@
-import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core";
-import { connector } from "@config/web3";
 import React, { useState, useEffect, useCallback } from "react";
+import { useWeb3React } from "@web3-react/core";
+import useGmp from "@hooks/useGmp";
 
 const Dashboard = () => {
-  const [balance, setBalance] = useState(0);
-  const { active, activate, deactivate, account, error, library } =
-    useWeb3React();
+  const { active } = useWeb3React();
+  const [totalSupply, setTotalSupply] = useState();
+  const [salesCount, setSalesCount] = useState();
+  const [sale, setSale] = useState([]);
 
-  const isUnsupportedChain = error instanceof UnsupportedChainIdError;
+  const gmp = useGmp();
 
-  // Connect to the wallet
-  const connect = useCallback(() => {
-    activate(connector);
-    localStorage.setItem("previouslyConnected", "true");
-  }, [activate]);
+  // Get data section
+  const getGmp = useCallback(async () => {
+    if (gmp) {
+      const total = await gmp.methods.totalSupply().call();
+      setTotalSupply(total / (1 * 10 ** 18));
 
-  // Disconnect to the wallet
-  const disconnect = () => {
-    deactivate();
-    localStorage.removeItem("previouslyConnected");
-  };
-
-  //   If previously connected, keep connected
-  useEffect(() => {
-    if (localStorage.getItem("previouslyConnected") === "true") {
-      connect();
+      const result = await gmp.methods.salesCount().call();
+      setSalesCount(result);
     }
-  }, [connect]);
-
-  // Get balance of the account
-  const getBalance = useCallback(async () => {
-    const toSet = await library.eth.getBalance(account);
-    setBalance((toSet / (1 * 10 ** 18)).toFixed(2));
-  }, [library?.eth, account]);
+  }, [gmp]);
 
   useEffect(() => {
-    if (active) {
-      getBalance();
-    }
-  }, [active, getBalance]);
+    getGmp();
+  }, [getGmp]);
 
-  let shortAdress = "Disconnected";
-  if (active) {
-    const walletSectionZ = String(account).substring(38);
-    const walletSectionA = String(account).substring(0, 6);
-    shortAdress = `${walletSectionA}...${walletSectionZ}`;
-  }
+  // Get sale
+  const getSale = useCallback(
+    async (index) => {
+      if (gmp) {
+        const result = await gmp.methods.sales(index).call();
+        setSale(result);
+      }
+    },
+    [gmp]
+  );
+
+  useEffect(() => {
+    getSale(0);
+  }, [getSale]);
+
+  if (!active) return "Connect your wallet";
 
   return (
     <div>
       <h1>Dashboard</h1>
-      {isUnsupportedChain ? "Network not supported" : "Connect wallet"}
-      <button onClick={connect}>Connect</button>
-      <button onClick={disconnect}>Disconnect</button>
-      <p>Account address: {shortAdress}</p>
-      <p>Account balance: {balance}</p>
+      <p>Total supply: {totalSupply}</p>
+      <p>Sales count: {salesCount}</p>
+      <h2>Sale info </h2>
+      <p>Amount: {sale.amount / (1 * 10 ** 18)}</p>
+      <p>Price: {sale.price / (1 * 10 ** 18)}</p>
+      <p>Wallet: {sale.wallet}</p>
+      <p>Availability: {String(!sale.isSold)}</p>
     </div>
   );
 };

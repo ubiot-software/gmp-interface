@@ -4,7 +4,7 @@ import Layout from "@containers/Layout";
 import Home from "@pages/Home";
 import NotFound from "@pages/NotFound";
 import Dashboard from "@pages/Dashboard";
-import Marketplace from "@containers/Marketplace";
+import Marketplace from "@pages/Marketplace";
 import AppContext from "@context/AppContext";
 import useInitialState from "@hooks/useInitialState";
 import { Web3ReactProvider } from "@web3-react/core";
@@ -21,8 +21,8 @@ const App = () => {
           <Layout>
             <Routes>
               <Route exact path="/" element={<Home />} />
-              <Route exact path="/marketplace" element={<Marketplace />} />
               <Route exact path="/dashboard" element={<Dashboard />} />
+              <Route exact path="/marketplace" element={<Marketplace />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>

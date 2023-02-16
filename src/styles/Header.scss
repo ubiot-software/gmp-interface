@@ -3,6 +3,8 @@ nav {
   justify-content: space-between;
   padding: 0 24px;
   background-color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  border-top: 2px solid var(--secondary-color);
 }
 .logo-container {
   background-color: var(--white);
