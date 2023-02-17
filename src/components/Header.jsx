@@ -10,10 +10,12 @@ import addImg from "@assets/add.png";
 import "@styles/Header.scss";
 
 const Header = () => {
-  const { saleInfo, sellInfo } = useContext(AppContext);
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const { saleInfo, sellInfo, menu, toggleMenu } = useContext(AppContext);
+
   const handleToggleMenu = () => {
-    if (active) setToggleMenu(!toggleMenu);
+    if (active) {
+      toggleMenu();
+    }
   };
 
   // Wallet display config
@@ -107,7 +109,7 @@ const Header = () => {
           )}
         </div>
       </div>
-      {toggleMenu && <Menu />}
+      {menu && <Menu />}
       {sellInfo && <Sell />}
       {saleInfo && <SaleDetail />}
     </nav>

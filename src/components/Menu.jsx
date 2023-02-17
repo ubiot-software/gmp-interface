@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useWeb3React } from "@web3-react/core";
 import AppContext from "@context/AppContext.js";
 import "@styles/Menu.scss";
 
@@ -6,6 +7,20 @@ const Menu = () => {
   const { toggleSellInfo } = useContext(AppContext);
   const handleToggleSellInfo = () => {
     toggleSellInfo();
+  };
+
+  const { toggleMenu } = useContext(AppContext);
+
+  const handleToggleMenu = () => {
+    toggleMenu();
+  };
+
+  // Disconnect to the wallet
+  const { deactivate } = useWeb3React();
+  const disconnect = () => {
+    handleToggleMenu();
+    deactivate();
+    localStorage.removeItem("previouslyConnected");
   };
 
   return (
@@ -25,7 +40,9 @@ const Menu = () => {
           </a>
         </li>
         <li>
-          <a href="#">Sign out</a>
+          <a href="#" onClick={disconnect}>
+            Sign out
+          </a>
         </li>
       </ul>
     </div>

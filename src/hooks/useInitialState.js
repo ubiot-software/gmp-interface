@@ -11,11 +11,18 @@ const useInitialState = () => {
     setToggleSellInfo(!sellInfo);
   };
 
+  const [menu, setToggleMenu] = useState(false);
+  const toggleMenu = () => {
+    setToggleMenu(!menu);
+  };
+
   return {
     saleInfo,
     toggleSaleInfo,
     sellInfo,
     toggleSellInfo,
+    menu,
+    toggleMenu,
   };
 };
 
