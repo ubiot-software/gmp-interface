@@ -5,7 +5,7 @@ import closeImg from "@assets/close.png";
 import "@styles/SaleDetail.scss";
 
 const SaleDetail = () => {
-  const { toggleSaleInfo } = useContext(AppContext);
+  const { saleId, toggleSaleInfo } = useContext(AppContext);
   const handleClick = () => {
     toggleSaleInfo();
   };
@@ -14,7 +14,7 @@ const SaleDetail = () => {
       <div className="transaction-detail-close">
         <img src={closeImg} alt="close" onClick={handleClick} />
       </div>
-      <SaleInfo />
+      <SaleInfo saleId={saleId} />
     </aside>
   );
 };

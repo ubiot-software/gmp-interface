@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
 .market-info {
@@ -22,6 +21,11 @@
   font-size: var(--lg);
   margin-bottom: 15px;
   margin-left: 10px;
+}
+
+.market-info p span {
+  color: var(--primary-color);
+  font-weight: bold;
 }
 
 .market-info .market-date {

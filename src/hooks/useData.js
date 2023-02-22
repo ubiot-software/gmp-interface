@@ -49,4 +49,31 @@ const useData = () => {
   };
 };
 
-export { useData };
+const useSale = (saleId = null) => {
+  const [sale, setSale] = useState({});
+  const [loading, setLoading] = useState(true);
+  const gmp = useGmp();
+
+  const update = useCallback(async () => {
+    if (gmp && saleId !== null) {
+      setLoading(true);
+
+      const toSet = await getSalesData({ gmp, saleId });
+      setSale(toSet);
+
+      setLoading(false);
+    }
+  }, [gmp, saleId]);
+
+  useEffect(() => {
+    update();
+  }, [update]);
+
+  return {
+    loading,
+    sale,
+    update,
+  };
+};
+
+export { useData, useSale };

@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect, useCallback } from "react";
 import SaleDetail from "@containers/SaleDetail";
 import AppContext from "@context/AppContext";
 import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core";
+import useTruncateAddress from "@hooks/useTruncateAddress";
 import { connector } from "@config/web3";
 import Menu from "@components/Menu";
 import Sell from "@containers/Sell";
@@ -59,9 +60,7 @@ const Header = () => {
   // String that shows connection status
   let shortAdress = "Connect wallet";
   if (active) {
-    const walletSectionA = String(account).substring(0, 6);
-    const walletSectionZ = String(account).substring(38);
-    shortAdress = `${walletSectionA}...${walletSectionZ}`;
+    shortAdress = useTruncateAddress(account);
   }
 
   return (

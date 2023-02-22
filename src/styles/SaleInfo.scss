@@ -7,6 +7,11 @@
   font-size: var(--lg);
 }
 
+.transaction-info p span {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
 .transaction-info .buy-button {
   width: 100%;
 }

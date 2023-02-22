@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 const useInitialState = () => {
+  const [saleId, setSaleId] = useState(null);
+
   const [saleInfo, setToggleSaleInfo] = useState(false);
   const toggleSaleInfo = () => {
     setToggleSaleInfo(!saleInfo);
@@ -17,6 +19,8 @@ const useInitialState = () => {
   };
 
   return {
+    saleId,
+    setSaleId,
     saleInfo,
     toggleSaleInfo,
     sellInfo,
