@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect, useCallback } from "react";
-import SaleDetail from "@containers/SaleDetail";
-import AppContext from "@context/AppContext";
+import { connector } from "@config/web3";
 import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core";
 import useTruncateAddress from "@hooks/useTruncateAddress";
-import { connector } from "@config/web3";
+import SaleDetail from "@containers/SaleDetail";
+import AppContext from "@context/AppContext";
 import Menu from "@components/Menu";
 import Sell from "@containers/Sell";
 import logoImg from "@assets/logo.png";

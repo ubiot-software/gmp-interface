@@ -1,5 +1,5 @@
-import { useWeb3React } from "@web3-react/core";
 import React, { useContext, useState } from "react";
+import { useWeb3React } from "@web3-react/core";
 import AppContext from "@context/AppContext.js";
 import useGmp from "@hooks/useGmp";
 import Spinner from "@components/Spinner";
