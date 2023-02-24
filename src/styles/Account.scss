@@ -1,0 +1,30 @@
+.Account {
+  display: grid;
+  place-items: center;
+
+  div {
+    width: 60%;
+    height: 300px;
+    margin-top: 40px;
+    display: grid;
+    place-content: center;
+  }
+
+  p {
+    font-size: var(--lg);
+  }
+
+  h1 {
+    margin: 40px 0 0 0;
+    color: var(--primary-color);
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--primary-color);
+  }
+
+  span {
+    font-weight: bold;
+  }
+}

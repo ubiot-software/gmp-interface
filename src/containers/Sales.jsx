@@ -2,6 +2,7 @@ import { useWeb3React } from "@web3-react/core";
 import React from "react";
 import Sale from "@components/Sale";
 import Spinner from "@components/Spinner";
+import RequestAccess from "@components/RequestAccess";
 import { useData } from "@hooks/useData";
 import "@styles/Sales.scss";
 
@@ -10,7 +11,7 @@ const Sales = () => {
   const { sales, loading } = useData();
 
   // If user not logged in, request access. TODO.
-  if (!active) return "Please login...";
+  if (!active) return <RequestAccess />;
 
   return (
     <>

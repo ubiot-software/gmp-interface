@@ -3,6 +3,11 @@
   place-items: center;
 }
 
+.market-title {
+  margin: 40px 0 0 0;
+  color: var(--primary-color);
+}
+
 .market-content {
   width: 80%;
   margin-top: 40px;
@@ -10,9 +15,4 @@
   grid-template-columns: repeat(auto-fill, 250px);
   gap: 20px;
   place-content: center;
-}
-
-.market-title {
-  margin: 40px 0 0 0;
-  color: var(--primary-color);
 }

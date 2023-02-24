@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, useCallback } from "react";
+import React, { useContext, useEffect, useCallback } from "react";
 import { connector } from "@config/web3";
 import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core";
 import useTruncateAddress from "@hooks/useTruncateAddress";
@@ -11,6 +11,8 @@ import addImg from "@assets/add.png";
 import "@styles/Header.scss";
 
 const Header = () => {
+  // Wallet display config
+  const { active, activate, deactivate, account, error } = useWeb3React();
   const { saleInfo, sellInfo, menu, toggleMenu } = useContext(AppContext);
 
   const handleToggleMenu = () => {
@@ -18,11 +20,6 @@ const Header = () => {
       toggleMenu();
     }
   };
-
-  // Wallet display config
-  const [balance, setBalance] = useState(0);
-  const { active, activate, deactivate, account, error, library } =
-    useWeb3React();
 
   const isUnsupportedChain = error instanceof UnsupportedChainIdError;
 
@@ -45,18 +42,6 @@ const Header = () => {
     }
   }, [connect]);
 
-  // Get balance of the account
-  const getBalance = useCallback(async () => {
-    const toSet = await library.eth.getBalance(account);
-    setBalance((toSet / (1 * 10 ** 18)).toFixed(2));
-  }, [library?.eth, account]);
-
-  useEffect(() => {
-    if (active) {
-      getBalance();
-    }
-  }, [active, getBalance]);
-
   // String that shows connection status
   let shortAdress = "Connect wallet";
   if (active) {
@@ -65,35 +50,37 @@ const Header = () => {
 
   return (
     <nav>
-      <div className="navbar-left">
+      <div className="navbar-left prevent-select">
         <a className="logo-container" href="/">
           <img src={logoImg} alt="logo" className="nav-logo" />
         </a>
         <ul>
           <li>
-            <a href="/dashboard">Dashboard</a>
-          </li>
-          <li>
             <a href="/marketplace">Marketplace</a>
           </li>
           <li>
+            <a href="/dashboard">Dashboard</a>
+          </li>
+          <li>
+            <a href="#">Support</a>
+          </li>
+          {active && (
+            <li>
+              <a href="/account">My account</a>
+            </li>
+          )}
+          {/* <li>
             <a href="#">Wells</a>
           </li>
           <li>
             <a href="#">Map</a>
           </li>
           <li>
-            <a href="#">Docs</a>
-          </li>
-          <li>
-            <a href="#">Support</a>
-          </li>
-          <li>
             <a href="#">Metering</a>
-          </li>
+          </li> */}
         </ul>
       </div>
-      <div className="navbar-right">
+      <div className="navbar-right prevent-select">
         <div className="navbar-wallet">
           {/* Add account button, showed when there is not a connected acount */}
           {!active && (
