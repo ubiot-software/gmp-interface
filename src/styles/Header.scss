@@ -1,12 +1,22 @@
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 5px 0;
   background-color: var(--secondary-color);
   border-bottom: 2px solid var(--secondary-color);
   border-top: 2px solid var(--secondary-color);
 }
+.menuIcon {
+  margin-left: 10px;
+}
+
+.menuIcon:hover {
+  cursor: pointer;
+  filter: brightness(95%);
+}
+
 .logo-container {
+  display: none;
   background-color: var(--white);
   padding: 0 10px;
   margin-left: 10px;
@@ -26,15 +36,16 @@ nav {
   align-items: center;
 }
 .navbar-left ul {
+  display: none;
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
   align-items: center;
 }
 .navbar-left ul {
   margin-left: 12px;
 }
+
 .navbar-left ul li a {
   text-decoration: none;
   color: var(--white);
@@ -78,4 +89,19 @@ nav {
   width: 20px;
   height: 20px;
   transform: rotate(45deg);
+}
+
+@media (min-width: 992px) {
+  nav {
+    padding: 0 24px;
+  }
+  .menuIcon {
+    display: none;
+  }
+  .logo-container {
+    display: inherit;
+  }
+  .navbar-left ul {
+    display: flex;
+  }
 }

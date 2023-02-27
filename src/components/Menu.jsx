@@ -27,7 +27,7 @@ const Menu = () => {
     <div className="Menu">
       <ul>
         <li>
-          <a href="#" className="title">
+          <a href="/account" className="title">
             My account
           </a>
         </li>

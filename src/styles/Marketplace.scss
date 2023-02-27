@@ -4,8 +4,8 @@
 }
 
 .market-title {
-  margin: 40px 0 0 0;
   color: var(--primary-color);
+  font-size: 25px;
 }
 
 .market-content {
@@ -15,4 +15,11 @@
   grid-template-columns: repeat(auto-fill, 250px);
   gap: 20px;
   place-content: center;
+}
+
+@media (min-width: 992px) {
+  .market-title {
+    font-size: 32px;
+    margin: 40px 0 0 0;
+  }
 }

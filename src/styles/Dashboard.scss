@@ -3,22 +3,18 @@
   place-items: center;
 
   h1 {
-    margin: 40px 0 0 0;
     color: var(--primary-color);
+    font-size: 25px;
   }
 
   .sections {
-    width: 60%;
     height: 300px;
-    display: grid;
-    gap: 40px;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 40px;
     place-items: center;
   }
 }
 
 .sections div h2 {
+  font-size: 20px;
   margin: 0;
   text-align: center;
   color: var(--primary-color);
@@ -26,6 +22,9 @@
 
 .sections .left {
   text-align: center;
+  border-bottom: 1px solid var(--secondary-color);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 
   h3 {
     margin: 20px 0 10px 0;
@@ -102,5 +101,28 @@
     margin-top: 20px;
     width: 250px;
     height: 162px;
+  }
+}
+
+@media (min-width: 992px) {
+  .Dashboard h1 {
+    font-size: 32px;
+    margin: 40px 0 0 0;
+  }
+
+  .Dashboard .sections {
+    margin-top: 40px;
+    width: 60%;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sections div h2 {
+  }
+  .sections .left {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
   }
 }

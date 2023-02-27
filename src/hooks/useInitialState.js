@@ -18,6 +18,11 @@ const useInitialState = () => {
     setToggleMenu(!menu);
   };
 
+  const [mobileMenu, setToggleMobileMenu] = useState(false);
+  const toggleMobileMenu = () => {
+    setToggleMobileMenu(!mobileMenu);
+  };
+
   return {
     saleId,
     setSaleId,
@@ -27,6 +32,8 @@ const useInitialState = () => {
     toggleSellInfo,
     menu,
     toggleMenu,
+    mobileMenu,
+    toggleMobileMenu,
   };
 };
 
