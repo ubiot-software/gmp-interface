@@ -4,8 +4,7 @@
   "description": "GroundWater MarketPlace official interface",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve",
+    "dev": "webpack serve",
     "build": "webpack --mode production"
   },
   "repository": {

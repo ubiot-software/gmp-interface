@@ -1,9 +1,15 @@
 import React from "react";
 import "@styles/RequestAccess.scss";
+import infoImg from "@assets/info.svg";
 
 const RequestAccess = () => {
   return (
-    <div className="RequestAccess">Connect your wallet to use the app</div>
+    <div className="RequestAccess">
+      <img src={infoImg} />
+      <p>
+        <span>Connect your wallet</span> to use the app
+      </p>
+    </div>
   );
 };
 
