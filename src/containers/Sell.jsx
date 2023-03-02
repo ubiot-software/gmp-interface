@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { useWeb3React } from "@web3-react/core";
 import AppContext from "@context/AppContext.js";
 import useGmp from "@hooks/useGmp";
@@ -10,13 +10,13 @@ import "@styles/Sell.scss";
 const Sell = () => {
   const { account } = useWeb3React();
   const [isRegistering, setIsRegistering] = useState(false);
+  const [amount, setAmount] = useState(false);
+  const [price, setPrice] = useState(false);
   const gmp = useGmp();
   const notification = useNotification();
+
   const registerSale = () => {
     setIsRegistering(true);
-
-    const amount = document.getElementById("amount").value;
-    const price = document.getElementById("price").value;
 
     gmp.methods
       .registerSale(
@@ -66,7 +66,7 @@ const Sell = () => {
   };
 
   return (
-    <aside className="Sell ">
+    <aside className="Sell">
       <div className="Sell-close">
         <img src={closeImg} alt="close" onClick={handleClick} />
       </div>
@@ -77,10 +77,19 @@ const Sell = () => {
         ) : (
           <>
             <label htmlFor="amount">Amount</label>
-            <input id="amount" type="number" />
+            <input
+              id="amount"
+              type="number"
+              onChange={(e) => setAmount(e.target.value)}
+            />
             <label htmlFor="price">Price</label>
-            <input id="price" type="number" />
+            <input
+              id="price"
+              type="number"
+              onChange={(e) => setPrice(e.target.value)}
+            />
             <button
+              disabled={!amount && !price}
               className="primary-button sell-button"
               onClick={registerSale}
             >

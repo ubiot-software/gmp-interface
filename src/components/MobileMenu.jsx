@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useWeb3React } from "@web3-react/core";
+import AppContext from "@context/AppContext";
 import "@styles/MobileMenu.scss";
 
 const MobileMenu = () => {
-  const { active } = useWeb3React();
+  const { active, deactivate } = useWeb3React();
+  const { toggleSellInfo, toggleMobileMenu } = useContext(AppContext);
+
+  const handleToggleSellInfo = () => {
+    toggleSellInfo();
+    toggleMobileMenu();
+  };
+
+  const disconnect = () => {
+    deactivate();
+    localStorage.removeItem("previouslyConnected");
+  };
 
   return (
     <div className="MobileMenu">
@@ -35,13 +47,15 @@ const MobileMenu = () => {
               <a href="/marketplace">Buy</a>
             </li>
             <li>
-              <a href="#">Sell</a>
+              <a href="#" onClick={handleToggleSellInfo}>
+                Sell
+              </a>
             </li>
           </ul>
 
           <ul>
             <li>
-              <a href="#" className="sign-out">
+              <a href="#" className="sign-out" onClick={disconnect}>
                 Sign out
               </a>
             </li>

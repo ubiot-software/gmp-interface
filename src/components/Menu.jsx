@@ -4,12 +4,11 @@ import AppContext from "@context/AppContext.js";
 import "@styles/Menu.scss";
 
 const Menu = () => {
-  const { toggleSellInfo } = useContext(AppContext);
+  const { toggleSellInfo, toggleMenu } = useContext(AppContext);
   const handleToggleSellInfo = () => {
+    toggleMenu();
     toggleSellInfo();
   };
-
-  const { toggleMenu } = useContext(AppContext);
 
   const handleToggleMenu = () => {
     toggleMenu();

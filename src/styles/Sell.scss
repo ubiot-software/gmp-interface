@@ -1,10 +1,9 @@
 .Sell {
-  border-left: 1px solid var(--secondary-color);
   padding: 10px 20px;
-  width: 350px;
+  width: 100%;
   background-color: var(--white);
-  position: absolute;
-  top: 75px;
+  position: fixed;
+  top: 62px;
   bottom: 0;
   right: 0;
   box-sizing: border-box;
@@ -54,4 +53,12 @@
 .Sell-info .sell-button {
   margin-top: 30px;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .Sell {
+    width: 350px;
+    border-left: 1px solid var(--secondary-color);
+    top: 67px;
+  }
 }

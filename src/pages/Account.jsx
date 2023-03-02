@@ -39,7 +39,7 @@ const Account = () => {
     return (
       <div className="Dashboard">
         <h1>Account</h1>
-        <RequestAccess />;
+        <RequestAccess />
       </div>
     );
 
