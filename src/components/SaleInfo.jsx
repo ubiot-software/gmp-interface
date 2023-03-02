@@ -63,7 +63,10 @@ const SaleInfo = (saleId) => {
       ) : (
         <>
           {isBuying ? (
-            <Spinner />
+            <>
+              <h1 className="buying">Buy</h1>
+              <Spinner />
+            </>
           ) : (
             <div className="transaction-info">
               <p>
