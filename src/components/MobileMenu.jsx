@@ -24,13 +24,18 @@ const MobileMenu = () => {
           <a href="/">Home</a>
         </li>
         <li>
-          <a href="/marketplace">Marketplace</a>
-        </li>
-        <li>
           <a href="/dashboard">Dashboard</a>
         </li>
         <li>
-          <a href="#">Support</a>
+          <a href="/marketplace">Marketplace</a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/alejandroch1202/gmp-interface/blob/main/README.md"
+            target="_blank"
+          >
+            Docs
+          </a>
         </li>
 
         {active && (
