@@ -1,3 +1,3 @@
-# GroundWater MarketPlace Interface
+# Groundwater Marketplace Interface
 
 By Ubiot, 2023.
