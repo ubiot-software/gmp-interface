@@ -93,7 +93,7 @@ const Sell = () => {
               className="primary-button sell-button"
               onClick={registerSale}
             >
-              Register sell
+              Register sale
             </button>
           </>
         )}
