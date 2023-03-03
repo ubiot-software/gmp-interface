@@ -1,6 +1,6 @@
-<p style="text-align: center"> <img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/src/assets/logo.png"/></p>
+<p align="center"> <img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/src/assets/logo.png"/></p>
 
-# <p style="text-align: center; font-weight: bold;">Groundwater Marketplace</p>
+# <p align="center">Groundwater Marketplace</p>
 
 ## How to use
 
@@ -14,7 +14,7 @@
 ### Connect with GMP
 - Go to [GMP](https://www.tgmp.app/) site. And in the up right corner, click on the ![plus](https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/src/assets/add.png) button.
 
-<p style="text-align: center"><img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/docs/step1.png"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/docs/step1.png"/></p>
 
 - Your wallet will pop up and you have to put in your password.
 
@@ -22,7 +22,7 @@
 
 - You can validate you are connected with the app, your wallet now will be shown in the up right corner
 
-<p style="text-align: center"><img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/docs/step2.png"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/docs/step2.png"/></p>
 
 ### Buy GMP
 
@@ -30,25 +30,25 @@
 
 - To select a specific sale press the ![plus](https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/src/assets/add.png) button and check the details.
 
-<p style="text-align: center"><img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/docs/step5.png"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/docs/step5.png"/></p>
 
 
 - And finish pressing the Buy button and accept the transaction in your wallet. Once it is approved you will receive your GMP tokens.
 
-<p style="text-align: center"><img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/docs/step6.png"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/docs/step6.png"/></p>
 
 ### Sell GMP
 
 - Press the menu button in the up right corner of the app and press in the Sell section.
 
-<p style="text-align: center"><img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/docs/step7.png"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/docs/step7.png"/></p>
 
 - Now add the amount of GMP and the price, then press the Register Sale.
 
-<p style="text-align: center"><img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/docs/step8.png"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/docs/step8.png"/></p>
 
 - Your wallet should pop up and you have to confirm the transaction. Once the transaction is approved, your sale should be shown in the [Marketplace](https://www.tgmp.app/marketplace) page.
 
 <br><br>
 
-<p style="text-align: center">Developed by Ubiot, 2023.</p>
+<p align="center">Developed by Ubiot, 2023.</p>
