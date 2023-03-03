@@ -17,7 +17,7 @@ const Home = () => {
     <section className="container">
       <div className="content">
         <div className="content-text">
-          <h1>GroundWater Marketplace</h1>
+          <h1>Groundwater Marketplace</h1>
           <p>
             Provides the technical infrastructure to facilitate the sharing and
             usage of groundwater.
