@@ -1,16 +1,10 @@
 const GmpArtifact = {
   address: {
-    5: "0x46B9B39251E03BA2504355e5FCC46F13b71DBf1f",
+    5: "0x86ee1A11AaF76A7f3f4C66680Ee77E6324D250eF",
   },
   abi: [
     {
-      inputs: [
-        {
-          internalType: "uint256",
-          name: "total",
-          type: "uint256",
-        },
-      ],
+      inputs: [],
       stateMutability: "nonpayable",
       type: "constructor",
     },
@@ -20,19 +14,19 @@ const GmpArtifact = {
         {
           indexed: true,
           internalType: "address",
-          name: "_owner",
+          name: "owner",
           type: "address",
         },
         {
           indexed: true,
           internalType: "address",
-          name: "_spender",
+          name: "spender",
           type: "address",
         },
         {
           indexed: false,
           internalType: "uint256",
-          name: "_value",
+          name: "value",
           type: "uint256",
         },
       ],
@@ -45,19 +39,38 @@ const GmpArtifact = {
         {
           indexed: true,
           internalType: "address",
-          name: "_from",
+          name: "previousOwner",
           type: "address",
         },
         {
           indexed: true,
           internalType: "address",
-          name: "_to",
+          name: "newOwner",
+          type: "address",
+        },
+      ],
+      name: "OwnershipTransferred",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "to",
           type: "address",
         },
         {
           indexed: false,
           internalType: "uint256",
-          name: "_value",
+          name: "value",
           type: "uint256",
         },
       ],
@@ -67,32 +80,13 @@ const GmpArtifact = {
     {
       inputs: [
         {
-          internalType: "uint256",
-          name: "saleId",
-          type: "uint256",
-        },
-      ],
-      name: "Buy",
-      outputs: [
-        {
-          internalType: "bool",
-          name: "success",
-          type: "bool",
-        },
-      ],
-      stateMutability: "payable",
-      type: "function",
-    },
-    {
-      inputs: [
-        {
           internalType: "address",
-          name: "_owner",
+          name: "owner",
           type: "address",
         },
         {
           internalType: "address",
-          name: "_spender",
+          name: "spender",
           type: "address",
         },
       ],
@@ -100,7 +94,7 @@ const GmpArtifact = {
       outputs: [
         {
           internalType: "uint256",
-          name: "remaining",
+          name: "",
           type: "uint256",
         },
       ],
@@ -111,12 +105,12 @@ const GmpArtifact = {
       inputs: [
         {
           internalType: "address",
-          name: "_spender",
+          name: "spender",
           type: "address",
         },
         {
           internalType: "uint256",
-          name: "_value",
+          name: "amount",
           type: "uint256",
         },
       ],
@@ -124,7 +118,7 @@ const GmpArtifact = {
       outputs: [
         {
           internalType: "bool",
-          name: "success",
+          name: "",
           type: "bool",
         },
       ],
@@ -135,7 +129,7 @@ const GmpArtifact = {
       inputs: [
         {
           internalType: "address",
-          name: "_owner",
+          name: "account",
           type: "address",
         },
       ],
@@ -148,6 +142,50 @@ const GmpArtifact = {
         },
       ],
       stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "burn",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "account",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "burnFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "saleId",
+          type: "uint256",
+        },
+      ],
+      name: "buy",
+      outputs: [],
+      stateMutability: "payable",
       type: "function",
     },
     {
@@ -164,6 +202,72 @@ const GmpArtifact = {
       type: "function",
     },
     {
+      inputs: [
+        {
+          internalType: "address",
+          name: "spender",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "subtractedValue",
+          type: "uint256",
+        },
+      ],
+      name: "decreaseAllowance",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "spender",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "addedValue",
+          type: "uint256",
+        },
+      ],
+      name: "increaseAllowance",
+      outputs: [
+        {
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
+      ],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "mint",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
       inputs: [],
       name: "name",
       outputs: [
@@ -177,40 +281,16 @@ const GmpArtifact = {
       type: "function",
     },
     {
-      inputs: [
+      inputs: [],
+      name: "owner",
+      outputs: [
         {
           internalType: "address",
           name: "",
           type: "address",
         },
       ],
-      name: "people",
-      outputs: [
-        {
-          internalType: "string",
-          name: "_name",
-          type: "string",
-        },
-        {
-          internalType: "address",
-          name: "wallet",
-          type: "address",
-        },
-      ],
       stateMutability: "view",
-      type: "function",
-    },
-    {
-      inputs: [
-        {
-          internalType: "string",
-          name: "_name",
-          type: "string",
-        },
-      ],
-      name: "registerPerson",
-      outputs: [],
-      stateMutability: "nonpayable",
       type: "function",
     },
     {
@@ -227,6 +307,13 @@ const GmpArtifact = {
         },
       ],
       name: "registerSale",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "renounceOwnership",
       outputs: [],
       stateMutability: "nonpayable",
       type: "function",
@@ -308,12 +395,12 @@ const GmpArtifact = {
       inputs: [
         {
           internalType: "address",
-          name: "_to",
+          name: "to",
           type: "address",
         },
         {
           internalType: "uint256",
-          name: "_value",
+          name: "amount",
           type: "uint256",
         },
       ],
@@ -321,7 +408,7 @@ const GmpArtifact = {
       outputs: [
         {
           internalType: "bool",
-          name: "success",
+          name: "",
           type: "bool",
         },
       ],
@@ -332,17 +419,17 @@ const GmpArtifact = {
       inputs: [
         {
           internalType: "address",
-          name: "_from",
+          name: "from",
           type: "address",
         },
         {
           internalType: "address",
-          name: "_to",
+          name: "to",
           type: "address",
         },
         {
           internalType: "uint256",
-          name: "_value",
+          name: "amount",
           type: "uint256",
         },
       ],
@@ -350,10 +437,23 @@ const GmpArtifact = {
       outputs: [
         {
           internalType: "bool",
-          name: "success",
+          name: "",
           type: "bool",
         },
       ],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "newOwner",
+          type: "address",
+        },
+      ],
+      name: "transferOwnership",
+      outputs: [],
       stateMutability: "nonpayable",
       type: "function",
     },

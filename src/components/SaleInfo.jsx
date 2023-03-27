@@ -18,7 +18,7 @@ const SaleInfo = (saleId) => {
     setIsBuying(true);
 
     gmp.methods
-      .Buy(saleId.saleId)
+      .buy(saleId.saleId)
       .send({ from: account, value: sale.price })
       .on("transactionHash", (txHash) => {
         console.log(txHash);
