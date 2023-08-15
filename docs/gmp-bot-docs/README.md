@@ -1,8 +1,6 @@
 <p align="center"> <img src="https://raw.githubusercontent.com/alejandroch1202/gmp-interface/main/src/assets/logo.png"/></p>
 
-# <p align="center">@ubiot_gmp_bot</p>
-
-## Documentación
+## Documentación [@ubiot_gmp_bot](https://t.me/ubiot_gmp_bot)
 
 ### Requisitos
 - Debes poseer una cuenta registrada en [DocuSign](https://www.docusign.com/start) para hacer las firmas electrónicas de las transacciones.
@@ -12,7 +10,7 @@
 - Una vez completado el registro, escribir al bot de Telegram [@ubiot_gmp_bot](https://t.me/ubiot_gmp_bot). La primera vez saldra un botón de **START** al cual se debe pulsar para iniciar el chat con el bot.
 
 ### Compra
-- Una vez seleccionado el boton de <b>START</b>, el bot mostrará un mensaje con un teclado en donde puede seleccionar que desea hacer con el bot. En este caso selecionaremos **Comprar**.
+- Una vez seleccionado el boton de **START**, el bot mostrará un mensaje con un teclado en donde puede seleccionar que desea hacer con el bot. En este caso selecionaremos **Comprar**.
 
 <p align="center"><img width="300px" src="https://raw.githubusercontent.com/ubiot-software/gmp-interface/main/docs/gmp-bot-docs/1.jpg"/></p>
 
@@ -39,8 +37,27 @@
 
 <p align="center"><img width="300px" src="https://raw.githubusercontent.com/ubiot-software/gmp-interface/main/docs/gmp-bot-docs/4.jpg"/></p>
 
-- Si selecciona "No, mostrar opciones", el bot enviará a escoger nuevamente otra venta. Por otro lado, si selecciona "Si, comprar ID: X", el bot hará el procesamiento y posteriormente le llegará un correo para hacer la firma en [DocuSign](https://www.docusign.com/start) y cerrar así su transacción de derechos de agua.
+- Si selecciona **No, mostrar opciones**, el bot enviará a escoger nuevamente otra venta. Por otro lado, si selecciona **Si, comprar ID: X**, el bot hará el procesamiento y posteriormente le llegará un correo para hacer la firma en [DocuSign](https://www.docusign.com/start) y cerrar así su transacción de derechos de agua.
 
 <p align="center"><img width="300px" src="https://raw.githubusercontent.com/ubiot-software/gmp-interface/main/docs/gmp-bot-docs/5.jpg"/></p>
+
+### Venta
+- Al igual que en el caso de la compra, una vez seleccionado el boton de **START**, el bot mostrará un mensaje con un teclado en donde puede seleccionar que desea hacer con el bot. En este caso selecionaremos **Vender**.
+
+- Al seleccionar el boton de **Vender**, el bot mostrará un mensaje solicitando el **precio** en euros por el cual desea vender cada **m³** de agua. En este ejemplo escribiremos **10**.
+
+<p align="center"><img width="300px" src="https://raw.githubusercontent.com/ubiot-software/gmp-interface/main/docs/gmp-bot-docs/6.jpg"/></p>
+
+- Al enviar el precio, el bot responderá con un mensaje con la cantidad que previamente escribimos para el precio y solicitando la **cantidad total de m³** que deseamos vender. En este caso escribiremos **200**.
+
+<p align="center"><img width="300px" src="https://raw.githubusercontent.com/ubiot-software/gmp-interface/main/docs/gmp-bot-docs/7.jpg"/></p>
+
+- Una vez ingresados ambos campos el bot solicitará **confirmación** de la venta que será agregada a la base de datos.
+
+<p align="center"><img width="300px" src="https://raw.githubusercontent.com/ubiot-software/gmp-interface/main/docs/gmp-bot-docs/8.jpg"/></p>
+
+- Si se selecciona **No, escribir nuevamente**, el bot empezará de nuevo el proceso y le solicitará nuevamente primero el precio y luego la cantidad total de m³. Por otro lado, si se selecciona **Si, vender X m³ a X euros/m³**, el bot procesara los datos y agregará su venta a la base de datos, la cual puede ser consultada en las opciones de compra.
+
+<p align="center"><img width="300px" src="https://raw.githubusercontent.com/ubiot-software/gmp-interface/main/docs/gmp-bot-docs/9.jpg"/></p>
 
 <p align="center">Developed by Ubiot, 2023.</p>
